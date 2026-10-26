@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link id="app-favicon" rel="icon" type="image/png" href="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Sora:wght@100..800&amp;family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&amp;display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Store</title>
+
+  <!-- Instant dynamic title & favicon hydration from cache -->
+  <script>
+    (function () {
+      try {
+        var raw = localStorage.getItem("cached_site_config") || sessionStorage.getItem("cached_site_config");
+        if (raw) {
+          var cfg = JSON.parse(raw);
+          var title = (cfg.seo && cfg.seo.metaTitle) || cfg.companyName;
+          if (title) {
+            document.title = title;
+          }
+          var fav = cfg.faviconUrl || cfg.companyLogo;
+          if (fav) {
+            var iconEl = document.getElementById("app-favicon") || document.querySelector("link[rel~='icon']");
+            if (iconEl) {
+              iconEl.href = fav;
+            }
+          }
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16543090365">
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'AW-16543090365');
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</body>
+
+</html>

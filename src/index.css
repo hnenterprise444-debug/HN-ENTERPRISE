@@ -1,0 +1,176 @@
+@import "./colors.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-base);
+  min-height: 100vh;
+}
+
+/* Premium Sleek Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1; /* Slate-300 */
+  border-radius: 9999px;
+  transition: background 0.2s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8; /* Slate-400 */
+}
+
+/* Dark mode scrollbar theme mapping */
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569; /* Slate-600 */
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #64748b; /* Slate-500 */
+}
+
+.icon-sm {
+  font-size: 16px;
+}
+.icon-md {
+  font-size: 18px;
+}
+.icon-lg {
+  font-size: 20px;
+}
+.icon-xl {
+  font-size: 22px;
+}
+.icon-2xl {
+  font-size: 24px;
+}
+.icon-3xl {
+  font-size: 28px;
+}
+.icon-4xl {
+  font-size: 30px;
+}
+.icon-5xl {
+  font-size: 32px;
+}
+
+/* ==========================================================================
+   Centralized Theme Utility Fallbacks
+   Ensures classes resolve instantly regardless of Tailwind config caching.
+   ========================================================================== */
+
+.bg-primary {
+  background-color: var(--color-primary) !important;
+}
+
+.hover\:bg-primary-hover:hover {
+  background-color: var(--color-primary-hover) !important;
+}
+
+.text-primary {
+  color: var(--color-primary) !important;
+}
+.text-logo {
+  color: var(--color-text-logo) !important;
+}
+.text-compli {
+  color: var(--color-text-compli) !important;
+}
+
+.hover\:text-primary-hover:hover {
+  color: var(--color-primary-hover) !important;
+}
+
+.border-primary {
+  border-color: var(--color-primary) !important;
+}
+
+.bg-bg-base {
+  background-color: var(--color-bg-base) !important;
+}
+
+.bg-bg-surface {
+  background-color: var(--color-bg-surface) !important;
+}
+
+.text-text-base {
+  color: var(--color-text-base) !important;
+}
+
+.text-text-muted {
+  color: var(--color-text-muted) !important;
+}
+
+.border-border-base {
+  border-color: var(--color-border-base) !important;
+}
+
+.border-border-subtle {
+  border-color: var(--color-border-subtle) !important;
+}
+
+.border-border-gold {
+  border-color: var(--color-border-gold) !important;
+}
+
+.bg-card {
+  background-color: var(--color-bg-card) !important;
+}
+
+.bg-card-hover {
+  background-color: var(--color-bg-card-hover) !important;
+}
+
+.hover\:bg-card-hover:hover {
+  background-color: var(--color-bg-card-hover) !important;
+}
+
+.text-subtle {
+  color: var(--color-text-subtle) !important;
+}
+
+.bg-primary-light {
+  background-color: var(--color-primary-light) !important;
+}
+
+
+/* Brand Partner Marquee Keyframe */
+@keyframes brandMarquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-brand-marquee {
+  animation: brandMarquee 30s linear infinite;
+  will-change: transform;
+}
+
+/* Smooth Fade-in animation for tab transitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
