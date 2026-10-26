@@ -16,7 +16,7 @@ function Admin() {
         if (path.startsWith('/coupons')) return 'coupons';
         if (path === '/reviews' || path === '/review') return 'reviews';
         if (path === '/admin/videos') return 'videos';
-        if (path === '/admin/team' || path === '/team') return 'team';
+        // if (path === '/admin/team' || path === '/team') return 'team';
         if (path === '/admin/brands' || (path === '/configure' && location.search.includes('tab=brands'))) return 'brands';
         if (path === '/configure') return 'configure';
         return 'overview';
