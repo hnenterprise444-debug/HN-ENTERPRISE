@@ -122,7 +122,7 @@ function Footer() {
                     </div>
 
                     {/* Showroom Map Location Card */}
-                    <div className="shrink-0 flex justify-center">
+                    {/* <div className="shrink-0 flex justify-center">
                         <a
                             href={mapUrl}
                             target="_blank"
@@ -137,7 +137,7 @@ function Footer() {
                                 loading="lazy"
                             />
                         </a>
-                    </div>
+                    </div> */}
 
                     {/* Social Links and Contacts */}
                     <div className="flex flex-col items-center gap-2.5 max-w-[260px] sm:max-w-[280px] text-center">
