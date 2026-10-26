@@ -98,7 +98,7 @@ export default function FounderSection() {
             )}
 
             {/* Refined Minimal CTA with Smooth Arrow Slide */}
-            <div className="pt-2 flex justify-center md:justify-start">
+            {/* <div className="pt-2 flex justify-center md:justify-start">
               <Link
                 to="/founder"
                 className="group/cta inline-flex items-center gap-3 text-xs sm:text-sm font-bold text-text-base hover:text-primary transition-colors duration-300 cursor-pointer"
@@ -111,7 +111,7 @@ export default function FounderSection() {
                   <span className="material-symbols-outlined text-[18px] text-primary group-hover/cta:text-[#090909] transition-colors duration-200">arrow_forward</span>
                 </span>
               </Link>
-            </div>
+            </div> */}
 
           </div>
 

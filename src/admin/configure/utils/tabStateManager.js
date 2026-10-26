@@ -72,6 +72,7 @@ export function getTabInitialData(tabId, config = {}) {
         companyTagline: config?.companyTagline || "",
         founderName: config?.founderName || "",
         founderPhone: config?.founderPhone || "",
+        founderPhoto: config?.founderPhoto || "",
         companyLogo: config?.companyLogo || "",
         faviconUrl: config?.faviconUrl || "",
       };
@@ -173,6 +174,7 @@ export function getTabSavePayload(tabId, data) {
         companyTagline: data?.companyTagline || "",
         founderName: data?.founderName || "",
         founderPhone: data?.founderPhone || "",
+        founderPhoto: data?.founderPhoto || "",
         companyLogo: data?.companyLogo || "",
         faviconUrl: data?.faviconUrl || "",
       };

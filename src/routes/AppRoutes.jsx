@@ -26,7 +26,7 @@ const TermsConditions = lazy(() => import('../pages/consumerservice/TermsConditi
 const ShippingPolicy = lazy(() => import('../pages/consumerservice/ShippingPolicy'));
 const RefundPolicy = lazy(() => import('../pages/consumerservice/RefundPolicy'));
 const CustomLegalPage = lazy(() => import('../pages/consumerservice/CustomLegalPage'));
-const MeetFounder = lazy(() => import('../pages/founder/MeetFounder'));
+// const MeetFounder = lazy(() => import('../pages/founder/MeetFounder'));
 
 // Lazy-loaded admin pages
 const Admin = lazy(() => import("../admin/Admin"));
@@ -104,8 +104,8 @@ export default function AppRoutes() {
         <Route path="/shippingpolicy" element={<ShippingPolicy />} />
         <Route path="/refundpolicy" element={<RefundPolicy />} />
         <Route path="/legal/:slug" element={<CustomLegalPage />} />
-        <Route path="/founder" element={<MeetFounder />} />
-        <Route path="/meet-our-founder" element={<MeetFounder />} />
+        {/* <Route path="/founder" element={<MeetFounder />} /> */}
+        {/* <Route path="/meet-our-founder" element={<MeetFounder />} /> */}
 
         {/* User Protected Routes */}
         <Route element={<ProtectedRoute />}>

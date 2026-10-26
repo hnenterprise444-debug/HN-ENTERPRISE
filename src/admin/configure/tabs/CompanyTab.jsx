@@ -188,6 +188,18 @@ export default function CompanyTab({ draft, updateDraft, markFieldSaved }) {
         }
     };
 
+    const handleFounderPhotoUpload = async (url) => {
+        updateDraft({ founderPhoto: url });
+        try {
+            await configureService.saveSiteConfig({ founderPhoto: url }, user?.uid || "");
+            setConfig((prev) => ({ ...prev, founderPhoto: url }));
+            if (markFieldSaved) markFieldSaved("founderPhoto", url);
+        } catch (err) {
+            console.error("Failed to save founder photo:", err);
+            toast.error("Failed to save founder photo to database");
+        }
+    };
+
     return (
         <div className="max-w-2xl space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -210,19 +222,39 @@ export default function CompanyTab({ draft, updateDraft, markFieldSaved }) {
             </div>
 
             {/* Founder Information */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-1">
-                <Field label="Founder Name">
-                    <Input
-                        value={draft.founderName || ""}
-                        onChange={(e) => updateDraft({ founderName: e.target.value })}
-                        placeholder="e.g. Founder Name"
-                    />
-                </Field>
-                <Field label="Founder Phone Number">
-                    <Input
-                        value={draft.founderPhone || ""}
-                        onChange={(e) => updateDraft({ founderPhone: e.target.value })}
-                        placeholder="e.g. +91 98765 43210"
+            <div className="bg-bg-surface/50 border border-border-subtle rounded-2xl p-4 sm:p-5 space-y-4">
+                <div className="border-b border-border-subtle pb-2">
+                    <h3 className="text-xs font-bold text-text-base uppercase tracking-wider">
+                        Founder Profile Details
+                    </h3>
+                    <p className="text-[11px] text-text-muted mt-0.5">
+                        Controls the Meet the Founder banner on the home page and the dedicated /founder page.
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <Field label="Founder Name">
+                        <Input
+                            value={draft.founderName || ""}
+                            onChange={(e) => updateDraft({ founderName: e.target.value })}
+                            placeholder="e.g. Founder Name"
+                        />
+                    </Field>
+                    <Field label="Founder Phone Number">
+                        <Input
+                            value={draft.founderPhone || ""}
+                            onChange={(e) => updateDraft({ founderPhone: e.target.value })}
+                            placeholder="e.g. +91 98765 43210"
+                        />
+                    </Field>
+                </div>
+
+                <Field label="Founder Portrait Photo">
+                    <LogoUpload
+                        label="Founder Photo"
+                        currentUrl={draft.founderPhoto}
+                        hint="Portrait orientation recommended (4:5 ratio). Displayed on the homepage founder banner and /founder page."
+                        onUpload={handleFounderPhotoUpload}
                     />
                 </Field>
             </div>

@@ -68,7 +68,7 @@ function Footer() {
         .map(p => ({ title: p.name, path: `/legal/${p.slug}` }));
 
     const legalLinks = [
-        { title: "Meet Our Founder", path: "/founder" },
+        // { title: "Meet Our Founder", path: "/founder" },
         ...activeFixedLinks,
         ...activeCustomLinks
     ];

@@ -20,7 +20,7 @@ function Home() {
         <HeroSection />
         <BrandPartnerSection />
         <ProductsGrid />
-        <VideoGuidesSection />
+        {/* <VideoGuidesSection /> */}
         <ReviewSection />
         {/* <ServiceAreaSection /> */}
         <FounderSection />
