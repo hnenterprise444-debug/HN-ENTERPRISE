@@ -32,4 +32,6 @@ documentation/
 TODO
 firestore.rules
 storage.rules
+.firebase/
+
 
